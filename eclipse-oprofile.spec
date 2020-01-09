@@ -1,8 +1,8 @@
 %define plugin_ver     0.3.0
-%define linuxtools_rel R0_5_0
+%define linuxtools_rel R0_6_1
 %define eclipse_base   %{_libdir}/eclipse
 %define install_loc    %{_libdir}/eclipse/dropins/oprofile
-%define qualifier      201003171651
+%define qualifier      201008261752
 %define ver_qual       %{plugin_ver}.%{qualifier}
 
 # All arches line up between Eclipse and Linux kernel names except i386 -> x86
@@ -14,7 +14,7 @@
 
 
 Name:           eclipse-oprofile
-Version:        0.5.0
+Version:        0.6.1
 Release:        1%{?dist}
 Summary:        Eclipse plugin for OProfile integration
 
@@ -30,7 +30,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 ExclusiveArch: i686 x86_64
 %endif
 
-BuildRequires: eclipse-pde >= 1:3.5.0
+BuildRequires: eclipse-pde >= 1:3.6.0
 BuildRequires: eclipse-cdt >= 6.0.0
 BuildRequires: eclipse-linuxprofilingframework >= 0.1.0
 BuildRequires: oprofile >= 0.9.3
@@ -112,6 +112,9 @@ chmod +x \
 %{_sysconfdir}/pam.d/opcontrol
 
 %changelog
+* Fri Jan 14 2011 Severin Gehwolf <sgehwolf@redhat.com> 0.6.1-1
+- Rebase to Linux tools 0.6.1.
+
 * Tue Mar 23 2010 Jeff Johnston <jjohnstn@redhat.com> 0.5.0-1
 - Resolves: #575107
 - Rebase to Linux tools 0.5.0.
